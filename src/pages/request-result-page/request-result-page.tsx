@@ -2,6 +2,8 @@ import React from 'react';
 
 export type RequestResultPageProps = {}
 
-export default function RequestResultPage({}: RequestResultPageProps) {
+const RequestResultPage = ({}: RequestResultPageProps) => {
     return (<div className="request-result-page"/>);
 }
+
+export default RequestResultPage;

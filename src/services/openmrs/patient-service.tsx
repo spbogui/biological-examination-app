@@ -1,4 +1,4 @@
-import apiClient from "../../../setup/http-common";
+import apiClient from "../../setup/http-common";
 import { Patient } from "../../models/openmrs/patient";
 
 const API_URL = "/patient";

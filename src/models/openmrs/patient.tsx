@@ -42,7 +42,11 @@ export interface Person {
   uuid: string;
 }
 
-export interface PatientIdentifier {}
+export interface PatientIdentifier {
+  identifier: string;
+  preferred: boolean;
+  identifierType: any;
+}
 
 export interface Patient {
   person: Person;

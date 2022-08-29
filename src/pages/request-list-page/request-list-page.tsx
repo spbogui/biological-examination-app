@@ -2,6 +2,8 @@ import React from 'react';
 
 export type RequestListProps = {}
 
-export default function RequestList({}: RequestListProps) {
+const RequestListPage = ({}: RequestListProps) => {
     return (<div className="request-list"/>);
 }
+
+export default RequestListPage

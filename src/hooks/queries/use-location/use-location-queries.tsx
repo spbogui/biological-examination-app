@@ -1,8 +1,5 @@
 import { useQuery } from "react-query";
-import { SelectItem } from "@mantine/core";
 import LocationService from "../../../services/openmrs/location-service";
-import { LocationAttribute } from "../../../models/openmrs/location";
-import { locationToSelectionList } from "../../../utils";
 
 export const useFindLocations = (
   params: string = "v=default",
@@ -19,10 +16,8 @@ export const useFindLocations = (
   );
 
   const locations = data ? data : [];
-  const locationSelectList: SelectItem[] = locationToSelectionList(locations);
   return {
     locations,
-    locationSelectList,
     getLocations,
     isLoading,
   };

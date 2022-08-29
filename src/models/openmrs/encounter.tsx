@@ -60,7 +60,52 @@ export interface Encounter {
     location: Location;
     encounterType: EncounterType;
     encounterProviders: EncounterProvider[];
+    orders: Order[];
     uuid: string;
+}
+
+export interface EncounterSave {
+    encounterDatetime: Date;
+    obs: ObsSave[];
+    patient: string;
+    location: string;
+    encounterType: string;
+    encounterProviders: EncounterProviderSave[];
+}
+
+export interface OrderType {
+    name: string;
+    description: string;
+    parent: OrderType;
+    javaClassName: string;
+}
+
+export interface Order {
+    type: OrderType;
+    orderNumber: string;
+    action: string; // NEW, REVISE, DISCONTINUE, RENEW
+    urgency: string; // ROUTINE
+    dateActivated: Date;
+    careSetting: string; // INPATIENT,OUTPATIENT
+    encounter: Encounter;
+    patient: Patient;
+    concept: Concept;
+    orderer: Provider;
+    orderReason: Concept
+}
+
+export interface OrderSave {
+    type: string;
+    orderNumber: string;
+    action: string;
+    urgency: string;
+    dateActivated: Date;
+    careSetting: string ;
+    encounter: string;
+    patient: string;
+    concept: string;
+    orderer: string;
+    orderReason: string
 }
 
 export interface EncounterSave {

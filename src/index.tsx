@@ -1,15 +1,28 @@
-import React from 'react';
+import React, {createContext} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {QueryClient, QueryClientProvider} from "react-query";
+import {MantineProvider} from "@mantine/core";
+import {ModalsProvider} from "@mantine/modals";
+import {ReactQueryDevtools} from "react-query/devtools";
+
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+      <QueryClientProvider client={queryClient}>
+          <MantineProvider>
+              <ModalsProvider>
+                  <App />
+              </ModalsProvider>
+          </MantineProvider>
+          <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
   </React.StrictMode>
 );
 

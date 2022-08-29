@@ -1,4 +1,4 @@
-import apiClient from "../../setup/http-common"
+import apiClient from "../setup/http-common"
 
 const authenticate = async () => {
     const response = await apiClient.get<any>("/session");

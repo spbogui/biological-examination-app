@@ -1,4 +1,4 @@
-import apiClient from "../../../setup/http-common";
+import apiClient from "../../setup/http-common";
 import { Settings } from "../../models/openmrs/settings";
 
 const API_URL = "/systemsetting";

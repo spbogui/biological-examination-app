@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
 import { SessionInfo } from "../../models/openmrs/settings";
-import { UserContext } from "../../../App";
+import { UserContext } from "../../App";
 import { useFindLocation } from "../queries/use-location/use-location-queries";
-import { LocationAttributeType } from "../../constants/location-attribute-type";
 import { Location } from "../../models/openmrs/location";
-import { SelectItem } from "@mantine/core";
 
 const useUserContext = () => {
   const sessionInfo: SessionInfo = useContext(UserContext);
@@ -30,22 +28,6 @@ const useUserContext = () => {
   const userParentLocation = userLocation
     ? userLocation.parentLocation
     : undefined;
-  const childLocations =
-    userLocation && userLocation.childLocations
-      ? userLocation.childLocations.filter(
-          (l: Location) =>
-            !l.attributes.some(
-              (a: any) =>
-                a.attributeType.uuid === LocationAttributeType.DIRECT_CLIENT &&
-                a.value === true
-            ) ||
-            !l.attributes.some(
-              (a: any) =>
-                a.attributeType.uuid === LocationAttributeType.DIRECT_CLIENT
-            )
-        )
-      : [];
-
   // console.log(childrenLocation, "children locations for user");
 
   // const childrenLocationSelectList: SelectItem[] = childrenLocation
@@ -92,7 +74,6 @@ const useUserContext = () => {
   return {
     userLocation,
     userParentLocation,
-    childLocations,
     hasPrivileges,
     isSystemDeveloper,
     connectedUser,

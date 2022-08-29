@@ -1,4 +1,4 @@
-import apiClient from "../../../setup/http-common";
+import apiClient from "../../setup/http-common";
 import {
   Location,
   LocationAttribute,

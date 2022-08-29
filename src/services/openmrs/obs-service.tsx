@@ -1,6 +1,5 @@
-import apiClient from "../../../setup/http-common";
-import { Patient, Person } from "../../models/openmrs/patient";
-import { Encounter, Obs } from "../../models/openmrs/encounter";
+import apiClient from "../../setup/http-common";
+import { Obs } from "../../models/openmrs/encounter";
 
 const API_URL = "/obs";
 

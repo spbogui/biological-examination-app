@@ -1,4 +1,4 @@
-import apiClient from "../../../setup/http-common";
+import apiClient from "../../setup/http-common";
 import { Patient, Person } from "../../models/openmrs/patient";
 import { Encounter, Obs } from "../../models/openmrs/encounter";
 
