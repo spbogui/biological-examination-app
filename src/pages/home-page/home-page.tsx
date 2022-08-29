@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-export type HomePageProps = {}
+export type HomePageProps = {};
 
 export default function HomePage({}: HomePageProps) {
-    return (<div className="home-page"/>);
+  return <div className="home-page">Home page</div>;
 }
