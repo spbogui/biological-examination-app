@@ -26,7 +26,6 @@ export const UserContext = createContext<any>({});
 
 function App() {
   const { userInfo, isLoading } = useGetSession();
-  const theme = useMantineTheme();
   return (
     <>
       {isLoading ? (
@@ -42,40 +41,18 @@ function App() {
               limit={10}
               autoClose={4000}
             >
-              <AppShell
-                padding={"xs"}
-                navbar={
-                  <Navbar width={{ base: 300 }} height={500} p="xs">
-                    {/* Navbar content */}
-                  </Navbar>
-                }
-                header={
-                  <Header
-                    height={60}
-                    p="xs"
-                    style={{
-                      backgroundColor: theme.colors.blue[9],
-                      color: "white",
-                    }}
-                  >
-                    {/* Header content */}
-                  </Header>
-                }
-              >
-                <Routes>
-                  <Route element={<Main />} path={"/"}>
-                    <Route element={<HomePage />} path={"/"} />
-                    <Route element={<RequestListPage />} path={"/list"} />
-                    <Route element={<RequestPage />} path={"/request"} />
-                    <Route element={<RequestPage />} path={"/request/:id"} />
-                    <Route
-                      element={<RequestResultPage />}
-                      path={"/request-result/:id"}
-                    />
-                  </Route>
-                </Routes>
-              </AppShell>
-              <Main />
+              <Routes>
+                <Route element={<Main />} path={"/"}>
+                  <Route element={<HomePage />} path={"/"} />
+                  <Route element={<RequestListPage />} path={"/list"} />
+                  <Route element={<RequestPage />} path={"/request"} />
+                  <Route element={<RequestPage />} path={"/request/:id"} />
+                  <Route
+                    element={<RequestResultPage />}
+                    path={"/request-result/:id"}
+                  />
+                </Route>
+              </Routes>
             </NotificationsProvider>
           </HashRouter>
         </UserContext.Provider>
